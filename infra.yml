@@ -1,0 +1,17 @@
+Parameters:
+  InstanceTypeParameter:
+    Type: String
+    Default: m1.small
+    AllowedValues:
+      - t2.micro
+      - m1.smal
+      - m1.large
+    Description: Enter t2.micro, m1.small and m1.large Default is m1.small
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone: us-east-2a
+      ImageId: testimage
+      InstanceType:
+        Ref: InstanceTypeParameter
